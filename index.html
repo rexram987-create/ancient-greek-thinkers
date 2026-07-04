@@ -7,7 +7,7 @@
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
   <title>אנשי הרוח הגדולים של יוון העתיקה</title>
-  <link rel="stylesheet" href="styles.css?v=10" />
+  <link rel="stylesheet" href="styles.css?v=11" />
 </head>
 <body>
   <nav class="site-nav" aria-label="ניווט ראשי">
@@ -16,6 +16,7 @@
       <a href="#intro" data-he="מבוא" data-en="Intro">מבוא</a>
       <a href="#timeline" data-he="ציר זמן" data-en="Timeline">ציר זמן</a>
       <a href="#fields" data-he="תחומים" data-en="Fields">תחומים</a>
+      <a href="#map" data-he="מפה" data-en="Map">מפה</a>
       <a href="#figures" data-he="הדמויות" data-en="Figures">הדמויות</a>
       <button class="language-toggle" type="button" id="languageToggle">English</button>
     </div>
@@ -31,7 +32,7 @@
         </p>
         <div class="hero-actions">
           <a class="primary-link" href="#figures" data-he="לעיון בדמויות" data-en="Explore figures">לעיון בדמויות</a>
-          <a class="secondary-link" href="#timeline" data-he="לציר הזמן" data-en="View timeline">לציר הזמן</a>
+          <a class="secondary-link" href="#map" data-he="למפה" data-en="View map">למפה</a>
         </div>
       </div>
 
@@ -74,6 +75,39 @@
       </div>
     </section>
 
+    <section id="map" class="map-section feature-card">
+      <p class="eyebrow" data-he="מפה אינטראקטיבית" data-en="Interactive Map">מפה אינטראקטיבית</p>
+      <h2 data-he="מפת יוון העתיקה" data-en="Map of Ancient Greece">מפת יוון העתיקה</h2>
+      <p class="map-intro" data-he="לחץ על עיר כדי לראות אילו אנשי רוח קשורים אליה." data-en="Click a city to see which thinkers are connected to it.">לחץ על עיר כדי לראות אילו אנשי רוח קשורים אליה.</p>
+      <div class="map-layout">
+        <div class="map-canvas" aria-label="מפה סכמטית של יוון העתיקה">
+          <svg class="ancient-map" viewBox="0 0 900 560" role="img" aria-labelledby="mapTitle mapDesc">
+            <title id="mapTitle">מפה סכמטית של יוון העתיקה</title>
+            <desc id="mapDesc">מפה חזותית בסיסית עם נקודות לחיצות לערים מרכזיות.</desc>
+            <rect width="900" height="560" rx="28" fill="#18202a"/>
+            <path d="M0 320 C150 260 250 300 360 230 C470 160 620 180 900 95 L900 560 L0 560 Z" fill="#263523" opacity="0.95"/>
+            <path d="M110 360 C220 315 305 345 398 288 C490 232 560 252 655 198 C725 158 805 152 900 132" fill="none" stroke="#9b7846" stroke-width="5" opacity="0.55"/>
+            <path d="M410 170 C430 205 420 250 455 276 C492 305 490 360 456 402 C425 441 427 486 462 528" fill="none" stroke="#9b7846" stroke-width="18" stroke-linecap="round" opacity="0.28"/>
+            <circle cx="585" cy="240" r="46" fill="#101820" opacity="0.92"/>
+            <path d="M610 250 C642 238 672 252 698 283" fill="none" stroke="#d4a15f" stroke-width="3" opacity="0.55"/>
+
+            <button class="map-point active" data-place="athens" x="0" y="0"><circle cx="500" cy="335" r="12"/><text x="520" y="340" data-he="אתונה" data-en="Athens">אתונה</text></button>
+            <button class="map-point" data-place="miletus" x="0" y="0"><circle cx="720" cy="310" r="12"/><text x="740" y="315" data-he="מילטוס" data-en="Miletus">מילטוס</text></button>
+            <button class="map-point" data-place="samos" x="0" y="0"><circle cx="665" cy="355" r="12"/><text x="685" y="360" data-he="סאמוס" data-en="Samos">סאמוס</text></button>
+            <button class="map-point" data-place="stagira" x="0" y="0"><circle cx="455" cy="190" r="12"/><text x="475" y="195" data-he="סטאגירה" data-en="Stagira">סטאגירה</text></button>
+            <button class="map-point" data-place="cos" x="0" y="0"><circle cx="690" cy="420" r="12"/><text x="710" y="425" data-he="קוס" data-en="Cos">קוס</text></button>
+            <button class="map-point" data-place="syracuse" x="0" y="0"><circle cx="245" cy="470" r="12"/><text x="265" y="475" data-he="סירקוזה" data-en="Syracuse">סירקוזה</text></button>
+          </svg>
+        </div>
+        <aside class="place-card" aria-live="polite">
+          <h3 id="placeName">אתונה</h3>
+          <p id="placeDescription">מרכז תרבותי ופוליטי חשוב, המזוהה במיוחד עם סוקרטס, אפלטון, אריסטו, סופוקלס ותוקידידס.</p>
+          <strong id="placeFiguresLabel">דמויות קשורות:</strong>
+          <p id="placeFigures">סוקרטס, אפלטון, אריסטו, סופוקלס, תוקידידס</p>
+        </aside>
+      </div>
+    </section>
+
     <section id="figures" class="figures-section feature-card">
       <p class="eyebrow" data-he="האוסף הראשי" data-en="Main Collection">האוסף הראשי</p>
       <h2 data-he="13 הדמויות הראשונות" data-en="The First 13 Figures">13 הדמויות הראשונות</h2>
@@ -97,7 +131,47 @@
 
   <script>
     const toggle = document.getElementById('languageToggle');
+    const placeName = document.getElementById('placeName');
+    const placeDescription = document.getElementById('placeDescription');
+    const placeFiguresLabel = document.getElementById('placeFiguresLabel');
+    const placeFigures = document.getElementById('placeFigures');
     let currentLanguage = localStorage.getItem('siteLanguage') || 'he';
+
+    const places = {
+      athens: {
+        he: { name: 'אתונה', description: 'מרכז תרבותי ופוליטי חשוב, המזוהה במיוחד עם סוקרטס, אפלטון, אריסטו, סופוקלס ותוקידידס.', figures: 'סוקרטס, אפלטון, אריסטו, סופוקלס, תוקידידס' },
+        en: { name: 'Athens', description: 'A major cultural and political center, especially associated with Socrates, Plato, Aristotle, Sophocles and Thucydides.', figures: 'Socrates, Plato, Aristotle, Sophocles, Thucydides' }
+      },
+      miletus: {
+        he: { name: 'מילטוס', description: 'עיר חשובה באיוניה ומרכז מוקדם של מחשבה פילוסופית ומדעית.', figures: 'תאלס, אנכסימנדרוס, אנכסימנס' },
+        en: { name: 'Miletus', description: 'An important Ionian city and an early center of philosophical and scientific thought.', figures: 'Thales, Anaximander, Anaximenes' }
+      },
+      samos: {
+        he: { name: 'סאמוס', description: 'אי יווני חשוב בים האגאי, המזוהה עם פיתגורס ועם מסורת מתמטית ופילוסופית.', figures: 'פיתגורס, אריסטרכוס מסאמוס' },
+        en: { name: 'Samos', description: 'An important Aegean island associated with Pythagoras and a mathematical-philosophical tradition.', figures: 'Pythagoras, Aristarchus of Samos' }
+      },
+      stagira: {
+        he: { name: 'סטאגירה', description: 'עיר בצפון יוון, הידועה כמקום הולדתו של אריסטו.', figures: 'אריסטו' },
+        en: { name: 'Stagira', description: 'A city in northern Greece, best known as the birthplace of Aristotle.', figures: 'Aristotle' }
+      },
+      cos: {
+        he: { name: 'קוס', description: 'אי יווני המזוהה עם היפוקרטס ועם מסורת הרפואה היוונית.', figures: 'היפוקרטס' },
+        en: { name: 'Cos', description: 'A Greek island associated with Hippocrates and the Greek medical tradition.', figures: 'Hippocrates' }
+      },
+      syracuse: {
+        he: { name: 'סירקוזה', description: 'עיר יוונית בסיציליה, המזוהה במיוחד עם ארכימדס.', figures: 'ארכימדס' },
+        en: { name: 'Syracuse', description: 'A Greek city in Sicily, especially associated with Archimedes.', figures: 'Archimedes' }
+      }
+    };
+
+    function updatePlace(placeKey) {
+      const data = places[placeKey][currentLanguage];
+      placeName.textContent = data.name;
+      placeDescription.textContent = data.description;
+      placeFiguresLabel.textContent = currentLanguage === 'he' ? 'דמויות קשורות:' : 'Connected figures:';
+      placeFigures.textContent = data.figures;
+      document.querySelectorAll('.map-point').forEach((point) => point.classList.toggle('active', point.dataset.place === placeKey));
+    }
 
     function setLanguage(language) {
       currentLanguage = language;
@@ -111,7 +185,13 @@
 
       toggle.textContent = language === 'he' ? 'English' : 'עברית';
       localStorage.setItem('siteLanguage', language);
+      const activePlace = document.querySelector('.map-point.active')?.dataset.place || 'athens';
+      updatePlace(activePlace);
     }
+
+    document.querySelectorAll('.map-point').forEach((point) => {
+      point.addEventListener('click', () => updatePlace(point.dataset.place));
+    });
 
     toggle.addEventListener('click', () => {
       setLanguage(currentLanguage === 'he' ? 'en' : 'he');
