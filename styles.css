@@ -21,7 +21,7 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: Arial, "Noto Sans Hebrew", "Segoe UI", sans-serif;
   background:
     linear-gradient(rgba(18, 16, 13, 0.78), rgba(18, 16, 13, 0.94)),
     var(--athens-image);
@@ -29,6 +29,10 @@ body {
   background-position: center;
   background-attachment: fixed;
   color: var(--ink);
+}
+
+body.english-mode {
+  font-family: Georgia, "Times New Roman", serif;
 }
 
 .site-nav {
@@ -73,10 +77,19 @@ body {
   color: var(--accent);
 }
 
-.hebrew-nav {
-  unicode-bidi: isolate;
-  direction: rtl;
-  font-family: Arial, "Noto Sans Hebrew", sans-serif;
+.language-toggle {
+  cursor: pointer;
+  border: 1px solid rgba(212, 161, 95, 0.45);
+  border-radius: 999px;
+  padding: 0.35rem 0.75rem;
+  background: rgba(212, 161, 95, 0.12);
+  color: var(--accent);
+  font: inherit;
+  font-weight: 700;
+}
+
+.language-toggle:hover {
+  background: rgba(212, 161, 95, 0.22);
 }
 
 .home-shell {
@@ -97,7 +110,6 @@ body {
 .intro-card,
 .overview-card,
 .names-panel,
-.hebrew-strip,
 .athens-card {
   background: rgba(29, 24, 19, 0.9);
   border: 1px solid var(--line);
@@ -114,7 +126,7 @@ body {
 .eyebrow {
   margin: 0 0 0.3rem;
   text-transform: uppercase;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.12em;
   font-size: 0.78rem;
   color: var(--accent);
   font-weight: 700;
@@ -122,13 +134,13 @@ body {
 
 h1 {
   margin: 0;
-  font-size: clamp(2.6rem, 7vw, 5.2rem);
-  line-height: 0.95;
+  font-size: clamp(2.3rem, 7vw, 5rem);
+  line-height: 1.05;
 }
 
 h2 {
   margin: 0 0 0.45rem;
-  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-size: clamp(1.5rem, 4vw, 2.3rem);
 }
 
 p {
@@ -141,7 +153,7 @@ p {
   margin: 0.7rem 0 0;
   color: var(--muted);
   font-size: clamp(1rem, 2vw, 1.14rem);
-  line-height: 1.55;
+  line-height: 1.65;
 }
 
 .athens-card {
@@ -183,11 +195,11 @@ p {
   background: rgba(38, 31, 24, 0.95);
   color: var(--ink);
   text-decoration: none;
-  font-size: 1.12rem;
+  font-size: 1.08rem;
   font-weight: 700;
 }
 
-.name-tile span {
+.name-tile small {
   display: block;
   margin-top: 0.18rem;
   color: var(--muted);
@@ -198,21 +210,6 @@ p {
 .name-tile:hover {
   border-color: rgba(212, 161, 95, 0.75);
   transform: translateY(-1px);
-}
-
-.hebrew-strip {
-  padding: 1rem 1.2rem;
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  align-items: center;
-  color: var(--muted);
-  font-family: Arial, "Noto Sans Hebrew", sans-serif;
-}
-
-.hebrew-strip strong {
-  color: var(--ink);
-  font-size: 1.08rem;
 }
 
 @media (max-width: 720px) {
@@ -232,14 +229,5 @@ p {
   .name-tile {
     min-height: 66px;
     font-size: 1rem;
-  }
-
-  .hebrew-strip {
-    display: block;
-  }
-
-  .hebrew-strip span {
-    display: block;
-    margin-top: 0.4rem;
   }
 }
