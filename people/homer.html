@@ -4,32 +4,217 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>הומרוס | אנשי הרוח של יוון העתיקה</title>
-  <link rel="stylesheet" href="../styles.css?v=16" />
+  <link rel="stylesheet" href="../styles.css?v=17" />
   <style>
-    .person-hero, .person-section { background: rgba(29, 24, 19, 0.9); border: 1px solid rgba(244, 234, 219, 0.16); border-radius: 22px; box-shadow: 0 18px 46px rgba(0, 0, 0, 0.35); backdrop-filter: blur(12px); padding: clamp(1.2rem, 4vw, 2rem); }
-    .person-hero { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(230px, 0.55fr); gap: 1.25rem; align-items: center; }
-    .person-hero h1 { margin: 0; font-size: clamp(3rem, 8vw, 6rem); line-height: 1.05; }
-    .person-image-card { margin: 0; overflow: hidden; border-radius: 18px; border: 1px solid rgba(212, 161, 95, 0.24); background: rgba(38, 31, 24, 0.92); }
-    .person-image-card img { display: block; width: 100%; min-height: 280px; object-fit: cover; background: #261f18; }
-    .person-image-card figcaption { padding: 0.75rem 0.9rem; color: #c8b79e; font-size: 0.9rem; line-height: 1.5; border-top: 1px solid rgba(244, 234, 219, 0.16); }
-    .person-section h2 { margin-top: 0; }
-    .identity-grid, .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 0.75rem; margin-top: 1rem; }
-    .info-card { border: 1px solid rgba(212, 161, 95, 0.22); background: rgba(38, 31, 24, 0.92); border-radius: 16px; padding: 0.9rem; }
-    .info-card strong { display: block; color: #d4a15f; margin-bottom: 0.25rem; }
-    .source-note { margin-top: 0.6rem; font-size: 0.86rem; color: #c8b79e; }
-    .source-note a, .info-card a { color: #d4a15f; }
-    @media (max-width: 760px) { .person-hero { grid-template-columns: 1fr; } }
+    .person-hero,
+    .person-section,
+    .quick-nav,
+    .person-footer {
+      background: rgba(29, 24, 19, 0.92);
+      border: 1px solid rgba(244, 234, 219, 0.16);
+      border-radius: 22px;
+      box-shadow: 0 18px 46px rgba(0, 0, 0, 0.35);
+      backdrop-filter: blur(12px);
+      padding: clamp(1.1rem, 4vw, 2rem);
+    }
+
+    .person-hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(240px, 0.65fr);
+      gap: 1.25rem;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .person-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 20% 20%, rgba(212, 161, 95, 0.18), transparent 35%);
+      pointer-events: none;
+    }
+
+    .person-hero > * { position: relative; }
+
+    .person-hero h1 {
+      margin: 0;
+      font-size: clamp(3.3rem, 9vw, 6.8rem);
+      line-height: 1.02;
+    }
+
+    .person-lead {
+      max-width: 760px;
+      color: #c8b79e;
+      font-size: clamp(1.05rem, 2.1vw, 1.22rem);
+      line-height: 1.75;
+      margin: 0.8rem 0 0;
+    }
+
+    .hero-facts {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 0.65rem;
+      margin-top: 1.2rem;
+    }
+
+    .hero-facts span,
+    .info-card,
+    .work-card,
+    .timeline-item,
+    .fact-card {
+      border: 1px solid rgba(212, 161, 95, 0.22);
+      background: rgba(38, 31, 24, 0.92);
+      border-radius: 16px;
+      padding: 0.9rem;
+    }
+
+    .hero-facts strong,
+    .info-card strong,
+    .work-card strong,
+    .fact-card strong {
+      display: block;
+      color: #d4a15f;
+      margin-bottom: 0.25rem;
+    }
+
+    .person-image-card {
+      margin: 0;
+      overflow: hidden;
+      border-radius: 18px;
+      border: 1px solid rgba(212, 161, 95, 0.24);
+      background: rgba(38, 31, 24, 0.92);
+    }
+
+    .person-image-card img {
+      display: block;
+      width: 100%;
+      min-height: 330px;
+      object-fit: cover;
+      background: #261f18;
+    }
+
+    .person-image-card figcaption {
+      padding: 0.75rem 0.9rem;
+      color: #c8b79e;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      border-top: 1px solid rgba(244, 234, 219, 0.16);
+    }
+
+    .quick-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      align-items: center;
+    }
+
+    .quick-nav a,
+    .person-footer a,
+    .source-note a,
+    .info-card a {
+      color: #d4a15f;
+    }
+
+    .quick-nav a {
+      text-decoration: none;
+      border: 1px solid rgba(212, 161, 95, 0.28);
+      border-radius: 999px;
+      padding: 0.45rem 0.75rem;
+      background: rgba(212, 161, 95, 0.1);
+      font-weight: 700;
+    }
+
+    .person-section h2 { margin: 0 0 0.6rem; }
+    .person-section p { line-height: 1.75; }
+
+    .identity-grid,
+    .card-grid,
+    .works-grid,
+    .facts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+
+    .work-card h3,
+    .timeline-item h3 {
+      margin: 0 0 0.45rem;
+      color: #d4a15f;
+    }
+
+    .work-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-top: 0.8rem;
+    }
+
+    .work-meta span {
+      border: 1px solid rgba(244, 234, 219, 0.16);
+      border-radius: 999px;
+      padding: 0.25rem 0.55rem;
+      color: #f4eadb;
+      font-size: 0.9rem;
+      background: rgba(18, 16, 13, 0.45);
+    }
+
+    .timeline-list {
+      display: grid;
+      gap: 0.8rem;
+      margin-top: 1rem;
+      border-inline-start: 3px solid rgba(212, 161, 95, 0.35);
+      padding-inline-start: 1rem;
+    }
+
+    .timeline-item { position: relative; }
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      inset-inline-start: calc(-1rem - 8px);
+      top: 1rem;
+      width: 13px;
+      height: 13px;
+      border-radius: 50%;
+      background: #d4a15f;
+      border: 2px solid #f4eadb;
+    }
+
+    .gallery-preview img {
+      display: block;
+      width: 100%;
+      border-radius: 14px;
+      margin-bottom: 0.7rem;
+    }
+
+    .source-list {
+      display: grid;
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+
+    .person-footer {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    @media (max-width: 760px) {
+      .person-hero { grid-template-columns: 1fr; }
+      .person-image-card img { min-height: 260px; }
+      .quick-nav a { font-size: 0.92rem; }
+    }
   </style>
 </head>
 <body>
   <nav class="site-nav" aria-label="ניווט ראשי">
     <a class="nav-brand" href="../index.html">← חזרה לדף הבית</a>
     <div class="nav-links">
-      <a href="#identity">תעודת זהות</a>
-      <a href="#biography">ביוגרפיה</a>
-      <a href="#works">יצירות</a>
-      <a href="#legacy">מורשת</a>
       <a href="../gallery.html">גלריה כללית</a>
+      <a href="#sources">מקורות</a>
     </div>
   </nav>
 
@@ -38,82 +223,144 @@
       <div>
         <p class="eyebrow">שירה אפית · יוון הארכאית</p>
         <h1>הומרוס</h1>
-        <p class="intro-text">המשורר האפי הגדול של המסורת היוונית, המזוהה עם <strong>האיליאדה</strong> ו<strong>האודיסיאה</strong> — שתי יצירות יסוד של הספרות העתיקה והתרבות המערבית.</p>
+        <p class="person-lead">הומרוס הוא השם המזוהה יותר מכל עם ראשית הספרות היוונית. המסורת מייחסת לו את <strong>האיליאדה</strong> ואת <strong>האודיסיאה</strong>, שתי יצירות שהפכו לאבני יסוד של התרבות המערבית, החינוך היווני והדמיון הספרותי של העולם העתיק.</p>
+        <div class="hero-facts" aria-label="מידע מהיר על הומרוס">
+          <span><strong>תקופה</strong>כנראה המאה ה־8 לפנה״ס</span>
+          <span><strong>תחום</strong>שירה אפית</span>
+          <span><strong>יצירות</strong>האיליאדה, האודיסיאה</span>
+          <span><strong>ודאות היסטורית</strong>פרטי חייו אינם ודאיים</span>
+        </div>
       </div>
       <figure class="person-image-card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Homer_At_the_British_Museum_2024_%283x4_cropped%29.jpg/500px-Homer_At_the_British_Museum_2024_%283x4_cropped%29.jpg" alt="פסל שיש של הומרוס, מוזיאון הבריטי" />
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Homer_At_the_British_Museum_2024_%283x4_cropped%29.jpg/600px-Homer_At_the_British_Museum_2024_%283x4_cropped%29.jpg" alt="פסל שיש של הומרוס, המוזיאון הבריטי" />
         <figcaption>פסל שיש של הומרוס. עותק רומי של מקור הלניסטי שאבד, כפי שמופיע בדף ויקיפדיה של הומרוס.</figcaption>
       </figure>
     </header>
 
+    <nav class="quick-nav" aria-label="תפריט פנימי של עמוד הומרוס">
+      <a href="#identity">תעודת זהות</a>
+      <a href="#biography">ביוגרפיה</a>
+      <a href="#iliad">האיליאדה</a>
+      <a href="#odyssey">האודיסיאה</a>
+      <a href="#world">העולם של הומרוס</a>
+      <a href="#legacy">מורשת</a>
+      <a href="#gallery">גלריה</a>
+      <a href="#timeline">ציר זמן</a>
+      <a href="#facts">עובדות</a>
+      <a href="#sources">מקורות</a>
+    </nav>
+
     <section id="identity" class="person-section">
-      <p class="eyebrow">1</p><h2>תעודת זהות</h2>
+      <p class="eyebrow">1 · תעודת זהות</p>
+      <h2>מי הוא הומרוס במבט מהיר?</h2>
       <div class="identity-grid">
         <div class="info-card"><strong>שם יווני</strong><span>Ὅμηρος</span></div>
         <div class="info-card"><strong>שם באנגלית</strong><span>Homer</span></div>
-        <div class="info-card"><strong>תקופה</strong><span>כנראה המאה ה־8 לפנה״ס</span></div>
-        <div class="info-card"><strong>תחום</strong><span>שירה אפית, ספרות יוונית, מסורת בעל־פה</span></div>
+        <div class="info-card"><strong>תקופת חיים</strong><span>משוערת בלבד; לרוב סביב המאה ה־8 לפנה״ס</span></div>
+        <div class="info-card"><strong>מקום</strong><span>המסורת קושרת אותו לאיוניה ולערים יווניות שונות</span></div>
+        <div class="info-card"><strong>תחום</strong><span>שירה אפית, מסורת בעל־פה, ספרות יוונית קדומה</span></div>
         <div class="info-card"><strong>יצירות מרכזיות</strong><span>האיליאדה והאודיסיאה</span></div>
-        <div class="info-card"><strong>ודאות היסטורית</strong><span>דמות מסורתית; פרטי חייו אינם ידועים בוודאות</span></div>
       </div>
     </section>
 
     <section id="biography" class="person-section">
-      <p class="eyebrow">2</p><h2>ביוגרפיה</h2>
-      <p>הומרוס נחשב במסורת היוונית למשורר הגדול ששר את סיפורי מלחמת טרויה ואת מסעות אודיסאוס. למרות מעמדו העצום, כמעט אין בידינו מידע ביוגרפי בטוח עליו. מקורות עתיקים שונים ייחסו לו מקומות לידה שונים, ולעיתים תיארו אותו כמשורר נודד ועיוור.</p>
-      <p>חשיבותו של הומרוס אינה תלויה רק בשאלת חייו האישיים. גם אם היצירות עוצבו במשך דורות של מסורת בעל־פה, השם הומרוס נעשה לסמל של רגע תרבותי מכריע.</p>
+      <p class="eyebrow">2 · ביוגרפיה</p>
+      <h2>מי היה הומרוס?</h2>
+      <p>הומרוס נחשב במסורת היוונית למשורר הגדול שסיפר את סיפור מלחמת טרויה ואת מסעות אודיסאוס. אף שמעמדו התרבותי עצום, פרטי חייו אינם ידועים בביטחון. כבר בעת העתיקה היו מסורות שונות על מקום לידתו, על תקופתו ועל דמותו, וחלקן אף תיארו אותו כמשורר עיוור ונודד.</p>
+      <p>החשיבות של הומרוס אינה תלויה רק בשאלה האם היה אדם יחיד או שם שמייצג מסורת רחבה. השם “הומרוס” מסמן את אחד הרגעים החשובים בתולדות הספרות: מעבר מסיפורים מושרים, שהועברו בעל־פה, אל יצירות אפיות עצומות, בעלות מבנה, דמויות, לשון והשפעה שנמשכו אלפי שנים.</p>
     </section>
 
-    <section id="works" class="person-section">
-      <p class="eyebrow">3</p><h2>יצירות והגות</h2>
+    <section id="iliad" class="person-section">
+      <p class="eyebrow">3 · יצירה מרכזית</p>
+      <h2>האיליאדה</h2>
+      <article class="work-card">
+        <h3>אפוס המלחמה והכבוד</h3>
+        <p>האיליאדה מתמקדת בפרק מתוך מלחמת טרויה, ובעיקר בזעמו של אכילס. היא אינה מספרת את כל המלחמה מתחילתה ועד סופה, אלא בוחרת רגע דרמטי שבו כבוד אישי, מנהיגות, אובדן וגורל מתנגשים זה בזה.</p>
+        <p>היצירה מציגה עולם שבו גיבורים בני־אדם ואלים פועלים זה לצד זה. היא עוסקת בגבורה, בכאב, בתהילה, בחמלה ובמחיר האנושי של מלחמה.</p>
+        <div class="work-meta"><span>אכילס</span><span>הקטור</span><span>אגממנון</span><span>טרויה</span><span>מלחמה וגורל</span></div>
+      </article>
+    </section>
+
+    <section id="odyssey" class="person-section">
+      <p class="eyebrow">4 · יצירה מרכזית</p>
+      <h2>האודיסיאה</h2>
+      <article class="work-card">
+        <h3>אפוס השיבה הביתה</h3>
+        <p>האודיסיאה מספרת על מסעו הארוך של אודיסאוס בחזרה לאיתקה לאחר מלחמת טרויה. בניגוד לאיליאדה, שמרכזה בשדה הקרב, האודיסיאה היא סיפור של דרך, זהות, תחבולה, געגוע ונאמנות.</p>
+        <p>היצירה בנויה כסדרת מפגשים והרפתקאות: מפלצות, אלים, איים רחוקים, סכנות בים ומבחנים מוסריים. במרכזה עומדת השאלה כיצד אדם חוזר לביתו — לא רק מבחינה גאוגרפית, אלא גם מבחינה נפשית ומשפחתית.</p>
+        <div class="work-meta"><span>אודיסאוס</span><span>פנלופה</span><span>איתקה</span><span>מסע ימי</span><span>תחבולה ונאמנות</span></div>
+      </article>
+    </section>
+
+    <section id="world" class="person-section">
+      <p class="eyebrow">5 · רקע היסטורי</p>
+      <h2>העולם של הומרוס</h2>
       <div class="card-grid">
-        <div class="info-card"><strong>האיליאדה</strong><span>אפוס המתמקד בזעם אכילס ובאירועים מתוך מלחמת טרויה. היצירה עוסקת בכבוד, גבורה, אובדן, גורל ומחיר המלחמה.</span></div>
-        <div class="info-card"><strong>האודיסיאה</strong><span>אפוס המספר על שובו הארוך של אודיסאוס לביתו באיתקה. היצירה עוסקת בתחבולה, נאמנות, געגוע, זהות ושיבה הביתה.</span></div>
+        <div class="info-card"><strong>יוון הארכאית</strong><span>תקופה של התגבשות ערי־מדינה, זהות יוונית משותפת ומסורות שירה בעל־פה.</span></div>
+        <div class="info-card"><strong>מסורת בעל־פה</strong><span>האפוסים קשורים לעולם של משוררים־זמרים שהעבירו סיפורי גבורה לפני קיבועם בכתב.</span></div>
+        <div class="info-card"><strong>מלחמת טרויה</strong><span>העולם ההומרי נשען על זיכרון אגדי של עימותים, גיבורים, מלכים וערים מתקופות קדומות יותר.</span></div>
       </div>
     </section>
 
-    <section id="context" class="person-section">
-      <p class="eyebrow">4</p><h2>הרקע ההיסטורי</h2>
-      <p>המסורת ההומרית קשורה ליוון הארכאית, תקופה שבה ערי־המדינה היווניות החלו להתגבש, מסורות בעל־פה עברו מדור לדור, והכתב היווני החל לשמש לרישום יצירות.</p>
-    </section>
-
     <section id="legacy" class="person-section">
-      <p class="eyebrow">5</p><h2>מורשת והשפעה</h2>
-      <p>הומרוס היה בסיס מרכזי בחינוך היווני. דורות של יוונים למדו ממנו שפה, מוסר, דימויי גבורה, סיפורי אלים וגיבורים, ותפיסות של כבוד, גורל וזיכרון.</p>
+      <p class="eyebrow">6 · השפעה</p>
+      <h2>מורשת והשפעה</h2>
+      <p>הומרוס היה יסוד מרכזי בחינוך היווני. דורות של יוונים למדו דרך האפוסים שפה, דימויי גבורה, סיפורי אלים, מושגים של כבוד וגורל, וגם שאלות מוסריות על מלחמה, נאמנות ומשפחה.</p>
+      <p>השפעתו נמשכה אל הספרות הרומית, אל ימי הביניים, אל הרנסאנס ואל התרבות המודרנית. גם כיום האיליאדה והאודיסיאה ממשיכות להופיע בתרגומים, מחקרים, יצירות אמנות, סרטים, מחזות וספרות מודרנית.</p>
     </section>
 
     <section id="gallery" class="person-section">
-      <p class="eyebrow">6</p><h2>גלריה</h2>
+      <p class="eyebrow">7 · גלריה</p>
+      <h2>תמונות וייצוגים</h2>
       <div class="card-grid">
-        <figure class="info-card">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Homer_At_the_British_Museum_2024_%283x4_cropped%29.jpg/320px-Homer_At_the_British_Museum_2024_%283x4_cropped%29.jpg" alt="פסל הומרוס" style="width:100%; border-radius:12px; margin-bottom:0.7rem;" />
+        <figure class="info-card gallery-preview">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Homer_At_the_British_Museum_2024_%283x4_cropped%29.jpg/360px-Homer_At_the_British_Museum_2024_%283x4_cropped%29.jpg" alt="פסל הומרוס" />
           <strong>פסל הומרוס</strong>
-          <span>תמונה מתוך ויקיפדיה/Wikimedia.</span><br><br>
-          <a href="../gallery.html">מעבר לגלריה הכללית</a>
+          <span>ייצוג חזותי מרכזי של הומרוס מתוך ויקיפדיה/Wikimedia.</span><br><br>
+          <a href="../gallery.html">מעבר לגלריה הכללית של כל הדמויות</a>
         </figure>
+        <div class="info-card"><strong>בהמשך</strong><span>נוסיף כתבי יד, איורים של מלחמת טרויה, תמונות של אודיסאוס, ומפות של העולם ההומרי.</span></div>
       </div>
     </section>
 
     <section id="timeline" class="person-section">
-      <p class="eyebrow">7</p><h2>ציר זמן</h2>
-      <div class="card-grid">
-        <div class="info-card"><strong>לפני תקופת הומרוס</strong><span>מסורות בעל־פה על גיבורים, מלחמות ואלים.</span></div>
-        <div class="info-card"><strong>המאה ה־8 לפנה״ס</strong><span>התקופה המקובלת שבה ממקמים את הומרוס או את עיצוב האפוסים.</span></div>
-        <div class="info-card"><strong>התקופה הקלאסית</strong><span>האיליאדה והאודיסיאה נעשות בסיס לחינוך היווני.</span></div>
+      <p class="eyebrow">8 · ציר זמן</p>
+      <h2>ציר זמן קצר</h2>
+      <div class="timeline-list">
+        <article class="timeline-item"><h3>לפני הומרוס</h3><p>מסורות שירה בעל־פה וסיפורי גבורה על מלחמות, מלכים ואלים עוברים מדור לדור.</p></article>
+        <article class="timeline-item"><h3>המאה ה־8 לפנה״ס בקירוב</h3><p>התקופה שבה מקובל למקם את הומרוס או את עיצוב האפוסים המיוחסים לו.</p></article>
+        <article class="timeline-item"><h3>יוון הקלאסית</h3><p>האיליאדה והאודיסיאה הופכות לחלק מרכזי מן החינוך והתרבות היוונית.</p></article>
+        <article class="timeline-item"><h3>העולם הרומי והרנסאנס</h3><p>האפוסים ממשיכים להשפיע על משוררים, מלומדים ואמנים, ונקראים מחדש בתקופות שונות.</p></article>
+        <article class="timeline-item"><h3>העת החדשה</h3><p>הומרוס נחקר, מתורגם ומעובד שוב ושוב בספרות, באמנות ובתרבות הפופולרית.</p></article>
       </div>
     </section>
 
     <section id="facts" class="person-section">
-      <p class="eyebrow">8</p><h2>עובדות מעניינות</h2>
-      <div class="card-grid">
-        <div class="info-card"><strong>השאלה ההומרית</strong><span>חוקרים דנים האם היה משורר יחיד בשם הומרוס או שמדובר בשם המייצג מסורת רחבה.</span></div>
-        <div class="info-card"><strong>שבע ערים</strong><span>מסורות עתיקות שונות טענו שערים שונות היו מקום הולדתו.</span></div>
-        <div class="info-card"><strong>מסורת בעל־פה</strong><span>האפוסים קשורים לעולם של משוררים־זמרים שהעבירו סיפורים לפני קיבועם בכתב.</span></div>
+      <p class="eyebrow">9 · הידעת?</p>
+      <h2>עובדות מעניינות</h2>
+      <div class="facts-grid">
+        <div class="fact-card"><strong>השאלה ההומרית</strong><span>חוקרים דנים האם הומרוס היה משורר יחיד או שם שמייצג מסורת רחבה של יצירה בעל־פה.</span></div>
+        <div class="fact-card"><strong>שבע ערים</strong><span>בעת העתיקה היו ערים שונות שטענו כי הומרוס נולד אצלן.</span></div>
+        <div class="fact-card"><strong>עיוורון</strong><span>המסורת תיארה לעיתים את הומרוס כמשורר עיוור, אך אין לכך ודאות היסטורית.</span></div>
+        <div class="fact-card"><strong>השפעה עצומה</strong><span>האיליאדה והאודיסיאה הן מן היצירות הנחקרות והמתורגמות ביותר מן העולם העתיק.</span></div>
       </div>
     </section>
 
-    <section id="sources" class="person-section"><p class="eyebrow">9</p><h2>מקורות וקריאה נוספת</h2><p>בהמשך נוסיף כאן מקורות ראשוניים, מחקר מודרני וקישורים למהדורות של האיליאדה והאודיסיאה.</p></section>
-    <section id="links" class="person-section"><p class="eyebrow">10</p><h2>קישורים פנימיים</h2><p>לאחר שנבנה עמודים נוספים, נוסיף כאן קישורים לדמויות הקשורות להומרוס.</p></section>
+    <section id="sources" class="person-section">
+      <p class="eyebrow">10 · מקורות</p>
+      <h2>מקורות וקריאה נוספת</h2>
+      <div class="source-list">
+        <div class="info-card"><strong>מקורות ראשוניים</strong><span>האיליאדה והאודיסיאה, בתרגומים ובמהדורות מדעיות.</span></div>
+        <div class="info-card"><strong>מחקר מודרני</strong><span>מחקרים על השאלה ההומרית, מסורת בעל־פה, יוון הארכאית ומלחמת טרויה.</span></div>
+        <div class="info-card"><strong>תמונות</strong><span>התמונה הראשית מבוססת על דף <a href="https://en.wikipedia.org/wiki/Homer" target="_blank" rel="noopener">Homer בוויקיפדיה</a>.</span></div>
+      </div>
+    </section>
+
+    <footer class="person-footer">
+      <a href="../index.html">← דף הבית</a>
+      <a href="../gallery.html">גלריה כללית</a>
+      <span>הבא בהמשך: פיתגורס</span>
+    </footer>
   </main>
 </body>
 </html>
