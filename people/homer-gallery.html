@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>גלריית הומרוס | אנשי הרוח של יוון העתיקה</title>
+  <link rel="stylesheet" href="../styles.css?v=15" />
+  <style>
+    .gallery-hero,
+    .gallery-section {
+      background: rgba(29, 24, 19, 0.9);
+      border: 1px solid rgba(244, 234, 219, 0.16);
+      border-radius: 22px;
+      box-shadow: 0 18px 46px rgba(0, 0, 0, 0.35);
+      backdrop-filter: blur(12px);
+      padding: clamp(1.2rem, 4vw, 2rem);
+    }
+
+    .gallery-hero h1 {
+      margin: 0;
+      font-size: clamp(2.4rem, 7vw, 5rem);
+      line-height: 1.05;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .gallery-card {
+      margin: 0;
+      overflow: hidden;
+      border: 1px solid rgba(212, 161, 95, 0.22);
+      background: rgba(38, 31, 24, 0.92);
+      border-radius: 18px;
+    }
+
+    .gallery-card img {
+      display: block;
+      width: 100%;
+      min-height: 300px;
+      object-fit: cover;
+      background: #261f18;
+    }
+
+    .gallery-card figcaption {
+      padding: 0.9rem;
+      color: #c8b79e;
+      line-height: 1.55;
+    }
+
+    .gallery-card strong {
+      display: block;
+      color: #d4a15f;
+      margin-bottom: 0.25rem;
+    }
+
+    .source-note {
+      margin-top: 1rem;
+      color: #c8b79e;
+      font-size: 0.9rem;
+    }
+
+    .source-note a {
+      color: #d4a15f;
+    }
+  </style>
+</head>
+<body>
+  <nav class="site-nav" aria-label="ניווט ראשי">
+    <a class="nav-brand" href="../index.html">← חזרה לדף הבית</a>
+    <div class="nav-links">
+      <a href="homer.html">עמוד הומרוס</a>
+      <a href="#statues">פסלים</a>
+      <a href="#sources">מקורות</a>
+    </div>
+  </nav>
+
+  <main class="home-shell">
+    <header class="gallery-hero">
+      <p class="eyebrow">גלריה · הומרוס</p>
+      <h1>גלריית הומרוס</h1>
+      <p class="intro-text">עמוד נפרד לתמונות, פסלים, כתבי יד ואיורים הקשורים להומרוס, לאיליאדה ולאודיסיאה. בשלב הראשון מוצג כאן פסל הומרוס שמופיע בדף ויקיפדיה/Wikimedia.</p>
+    </header>
+
+    <section id="statues" class="gallery-section">
+      <p class="eyebrow">פסלים</p>
+      <h2>פסל הומרוס</h2>
+      <div class="gallery-grid">
+        <figure class="gallery-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Homer_At_the_British_Museum_2024_%283x4_cropped%29.jpg/700px-Homer_At_the_British_Museum_2024_%283x4_cropped%29.jpg" alt="פסל שיש של הומרוס במוזיאון הבריטי" />
+          <figcaption>
+            <strong>פסל שיש של הומרוס</strong>
+            עותק רומי של מקור הלניסטי שאבד. התמונה משמשת כייצוג חזותי מרכזי של הומרוס באתר.
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="sources" class="gallery-section">
+      <p class="eyebrow">מקורות</p>
+      <h2>קרדיט ותיעוד</h2>
+      <p class="source-note">מקור התמונה: <a href="https://en.wikipedia.org/wiki/Homer" target="_blank" rel="noopener">Wikipedia – Homer</a>. בהמשך ניתן להרחיב את העמוד עם תמונות נוספות מתוך Wikimedia Commons: פסלים, כתבי יד עתיקים, מפות ואיורים.</p>
+    </section>
+  </main>
+</body>
+</html>
