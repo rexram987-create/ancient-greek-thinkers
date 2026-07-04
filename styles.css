@@ -5,9 +5,8 @@
   --ink: #f4eadb;
   --muted: #c8b79e;
   --accent: #d4a15f;
-  --accent-soft: #7d5730;
   --line: rgba(244, 234, 219, 0.16);
-  --shadow: 0 22px 60px rgba(0, 0, 0, 0.35);
+  --shadow: 0 18px 46px rgba(0, 0, 0, 0.35);
 }
 
 * {
@@ -20,208 +19,130 @@ html {
 
 body {
   margin: 0;
+  min-height: 100vh;
   font-family: Georgia, "Times New Roman", serif;
   background:
-    radial-gradient(circle at top left, rgba(212, 161, 95, 0.18), transparent 32%),
-    linear-gradient(180deg, #18130f, var(--bg));
-  color: var(--ink);
-  line-height: 1.65;
-}
-
-.top-nav {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 0.9rem clamp(1rem, 4vw, 4rem);
-  background: rgba(18, 16, 13, 0.88);
-  border-bottom: 1px solid var(--line);
-  backdrop-filter: blur(14px);
-}
-
-.brand {
-  font-weight: 700;
-  letter-spacing: 0.03em;
-  color: var(--accent);
-}
-
-.nav-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.9rem;
-}
-
-.nav-links a {
-  color: var(--ink);
-  text-decoration: none;
-  font-size: 0.96rem;
-}
-
-.nav-links a:hover {
-  color: var(--accent);
-}
-
-.hero {
-  min-height: 72vh;
-  background:
-    linear-gradient(rgba(18, 16, 13, 0.48), rgba(18, 16, 13, 0.86)),
+    linear-gradient(rgba(18, 16, 13, 0.78), rgba(18, 16, 13, 0.94)),
     url("https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Acropolis_of_Athens_01361.JPG/1280px-Acropolis_of_Athens_01361.JPG");
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
   color: var(--ink);
 }
 
-.hero-content {
-  max-width: 860px;
-  padding: clamp(3.5rem, 10vw, 8rem) clamp(1.2rem, 6vw, 6rem);
+.home-shell {
+  width: min(1120px, calc(100% - 1.5rem));
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: clamp(1rem, 3vw, 2rem) 0;
+  display: grid;
+  align-content: center;
+  gap: 1rem;
+}
+
+.intro-card,
+.names-panel,
+.hebrew-strip {
+  background: rgba(29, 24, 19, 0.9);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(12px);
+}
+
+.intro-card {
+  padding: clamp(1.2rem, 4vw, 2rem);
 }
 
 .eyebrow {
+  margin: 0 0 0.3rem;
   text-transform: uppercase;
   letter-spacing: 0.14em;
-  font-size: 0.82rem;
+  font-size: 0.78rem;
   color: var(--accent);
   font-weight: 700;
-}
-
-.eyebrow.dark {
-  color: var(--accent);
 }
 
 h1 {
-  font-size: clamp(2.8rem, 7vw, 6rem);
-  line-height: 0.96;
-  margin: 0.25rem 0 1rem;
+  margin: 0;
+  font-size: clamp(2.6rem, 7vw, 5.2rem);
+  line-height: 0.95;
 }
 
-h2 {
-  font-size: clamp(1.9rem, 4vw, 3rem);
-  line-height: 1.1;
-  margin: 0 0 0.9rem;
-}
-
-h3 {
-  margin: 0 0 0.35rem;
-}
-
-p {
+.intro-text {
+  max-width: 620px;
+  margin: 0.7rem 0 0;
   color: var(--muted);
+  font-size: clamp(1rem, 2vw, 1.18rem);
 }
 
-.button {
-  display: inline-block;
-  margin-top: 1.2rem;
-  padding: 0.85rem 1.25rem;
-  border: 1px solid rgba(212, 161, 95, 0.58);
-  border-radius: 999px;
-  color: #17120e;
+.names-panel {
+  padding: 0.9rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+  gap: 0.65rem;
+}
+
+.name-tile {
+  display: block;
+  min-height: 72px;
+  padding: 0.85rem;
+  border-radius: 15px;
+  border: 1px solid rgba(212, 161, 95, 0.22);
+  background: rgba(38, 31, 24, 0.95);
+  color: var(--ink);
   text-decoration: none;
-  background: var(--accent);
+  font-size: 1.12rem;
   font-weight: 700;
 }
 
-.section {
-  width: min(1120px, calc(100% - 2rem));
-  margin: 0 auto;
-  padding: clamp(2rem, 5vw, 4rem) 0;
-}
-
-.compact-section {
-  padding-bottom: 2rem;
-}
-
-.section-heading {
-  max-width: 760px;
-  margin-bottom: 1.4rem;
-}
-
-.compact-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-  gap: 0.85rem;
-}
-
-.mini-card {
-  background: linear-gradient(180deg, var(--panel-soft), var(--panel));
-  border: 1px solid var(--line);
-  border-radius: 18px;
-  padding: 1rem;
-  box-shadow: var(--shadow);
-  min-height: 118px;
-}
-
-.mini-card h3 {
-  color: var(--ink);
-  font-size: 1.32rem;
-}
-
-.mini-card p {
-  margin: 0;
+.name-tile span {
+  display: block;
+  margin-top: 0.18rem;
   color: var(--muted);
-  font-size: 0.96rem;
+  font-size: 0.82rem;
+  font-weight: 400;
 }
 
-.fields-panel {
-  background: rgba(38, 31, 24, 0.72);
-  border: 1px solid var(--line);
-  border-radius: 26px;
-  padding: clamp(1.5rem, 4vw, 2.5rem);
+.name-tile:hover {
+  border-color: rgba(212, 161, 95, 0.75);
+  transform: translateY(-1px);
 }
 
-.field-list {
+.hebrew-strip {
+  padding: 1rem 1.2rem;
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.7rem;
-  margin-top: 1rem;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+  color: var(--muted);
 }
 
-.field-list span {
-  border: 1px solid rgba(212, 161, 95, 0.42);
+.hebrew-strip strong {
   color: var(--ink);
-  border-radius: 999px;
-  padding: 0.55rem 0.85rem;
-  background: rgba(212, 161, 95, 0.1);
-}
-
-.rtl {
-  background: linear-gradient(180deg, #261f18, #1d1813);
-  border: 1px solid var(--line);
-  border-radius: 28px;
-  padding: clamp(1.5rem, 4vw, 3rem);
-  margin-bottom: 3rem;
-}
-
-.rtl p,
-.rtl li {
-  color: var(--muted);
-}
-
-.hebrew-list {
-  columns: 2;
-  column-gap: 2.5rem;
-  padding-right: 1.4rem;
-}
-
-.footer {
-  text-align: center;
-  padding: 1.5rem 1rem;
-  border-top: 1px solid var(--line);
-  color: var(--muted);
+  font-size: 1.08rem;
 }
 
 @media (max-width: 720px) {
-  .top-nav {
-    align-items: flex-start;
-    flex-direction: column;
+  .home-shell {
+    align-content: start;
   }
 
-  .hero {
-    min-height: 64vh;
+  .names-panel {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .hebrew-list {
-    columns: 1;
+  .name-tile {
+    min-height: 66px;
+    font-size: 1rem;
+  }
+
+  .hebrew-strip {
+    display: block;
+  }
+
+  .hebrew-strip span {
+    display: block;
+    margin-top: 0.4rem;
   }
 }
