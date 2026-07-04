@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>הומרוס | אנשי הרוח של יוון העתיקה</title>
-  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="../styles.css?v=14" />
   <style>
     .person-hero,
     .person-section {
@@ -16,10 +16,41 @@
       padding: clamp(1.2rem, 4vw, 2rem);
     }
 
+    .person-hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(230px, 0.55fr);
+      gap: 1.25rem;
+      align-items: center;
+    }
+
     .person-hero h1 {
       margin: 0;
       font-size: clamp(3rem, 8vw, 6rem);
       line-height: 1.05;
+    }
+
+    .person-image-card {
+      margin: 0;
+      overflow: hidden;
+      border-radius: 18px;
+      border: 1px solid rgba(212, 161, 95, 0.24);
+      background: rgba(38, 31, 24, 0.92);
+    }
+
+    .person-image-card img {
+      display: block;
+      width: 100%;
+      min-height: 280px;
+      object-fit: cover;
+      background: #261f18;
+    }
+
+    .person-image-card figcaption {
+      padding: 0.75rem 0.9rem;
+      color: #c8b79e;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      border-top: 1px solid rgba(244, 234, 219, 0.16);
     }
 
     .person-section h2 {
@@ -46,6 +77,22 @@
       color: #d4a15f;
       margin-bottom: 0.25rem;
     }
+
+    .source-note {
+      margin-top: 0.6rem;
+      font-size: 0.86rem;
+      color: #c8b79e;
+    }
+
+    .source-note a {
+      color: #d4a15f;
+    }
+
+    @media (max-width: 760px) {
+      .person-hero {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
@@ -61,9 +108,16 @@
 
   <main class="home-shell">
     <header class="person-hero">
-      <p class="eyebrow">שירה אפית · יוון הארכאית</p>
-      <h1>הומרוס</h1>
-      <p class="intro-text">המשורר האפי הגדול של המסורת היוונית, המזוהה עם <strong>האיליאדה</strong> ו<strong>האודיסיאה</strong> — שתי יצירות יסוד של הספרות העתיקה והתרבות המערבית.</p>
+      <div>
+        <p class="eyebrow">שירה אפית · יוון הארכאית</p>
+        <h1>הומרוס</h1>
+        <p class="intro-text">המשורר האפי הגדול של המסורת היוונית, המזוהה עם <strong>האיליאדה</strong> ו<strong>האודיסיאה</strong> — שתי יצירות יסוד של הספרות העתיקה והתרבות המערבית.</p>
+      </div>
+
+      <figure class="person-image-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Homer_At_the_British_Museum_2024_%283x4_cropped%29.jpg/500px-Homer_At_the_British_Museum_2024_%283x4_cropped%29.jpg" alt="פסל שיש של הומרוס, מוזיאון הבריטי" />
+        <figcaption>פסל שיש של הומרוס. עותק רומי של מקור הלניסטי שאבד, כפי שמופיע בדף ויקיפדיה של הומרוס.</figcaption>
+      </figure>
     </header>
 
     <section id="identity" class="person-section">
@@ -110,7 +164,14 @@
     <section id="gallery" class="person-section">
       <p class="eyebrow">6</p>
       <h2>גלריה</h2>
-      <p>בשלב הבא נוסיף כאן תמונות של פסלי הומרוס, כתבי יד, איורים של האיליאדה והאודיסיאה, ומפות של העולם ההומרי.</p>
+      <div class="card-grid">
+        <figure class="info-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Homer_At_the_British_Museum_2024_%283x4_cropped%29.jpg/320px-Homer_At_the_British_Museum_2024_%283x4_cropped%29.jpg" alt="פסל הומרוס" style="width:100%; border-radius:12px; margin-bottom:0.7rem;" />
+          <strong>פסל הומרוס</strong>
+          <span>תמונה מתוך ויקיפדיה/Wikimedia. בהמשך נוסיף עוד פסלים, כתבי יד ואיורים.</span>
+        </figure>
+      </div>
+      <p class="source-note">מקור התמונה: <a href="https://en.wikipedia.org/wiki/Homer" target="_blank" rel="noopener">Wikipedia – Homer</a>.</p>
     </section>
 
     <section id="timeline" class="person-section">
@@ -137,6 +198,7 @@
       <p class="eyebrow">9</p>
       <h2>מקורות וקריאה נוספת</h2>
       <p>בהמשך נוסיף כאן מקורות ראשוניים, מחקר מודרני וקישורים למהדורות של האיליאדה והאודיסיאה.</p>
+      <p class="source-note">התמונה הראשית והכיתוב מבוססים על דף <a href="https://en.wikipedia.org/wiki/Homer" target="_blank" rel="noopener">Homer בוויקיפדיה</a>, שבו מופיע פסל שיש של הומרוס, עותק רומי של מקור הלניסטי שאבד.</p>
     </section>
 
     <section id="links" class="person-section">
