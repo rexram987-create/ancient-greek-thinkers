@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>אנשי הרוח הגדולים של יוון העתיקה</title>
-  <link rel="stylesheet" href="styles.css?v=13" />
+  <link rel="stylesheet" href="styles.css?v=14" />
 </head>
 <body>
   <nav class="site-nav" aria-label="ניווט ראשי">
@@ -96,7 +96,7 @@
       <p class="eyebrow" data-he="האוסף הראשי" data-en="Main Collection">האוסף הראשי</p>
       <h2 data-he="13 הדמויות הראשונות" data-en="The First 13 Figures">13 הדמויות הראשונות</h2>
       <section class="names-panel" aria-label="הדמויות המרכזיות">
-        <a href="./people/homer.html" class="name-tile" aria-label="פתח את העמוד של הומרוס"><span data-he="הומרוס" data-en="Homer">הומרוס</span><small data-he="שירה אפית" data-en="Epic poetry">שירה אפית</small></a>
+        <a id="homerCard" href="https://rexram987-create.github.io/ancient-greek-thinkers/people/homer.html" class="name-tile" aria-label="פתח את העמוד של הומרוס"><span data-he="הומרוס" data-en="Homer">הומרוס</span><small data-he="שירה אפית" data-en="Epic poetry">שירה אפית</small></a>
         <a href="#" class="name-tile"><span data-he="פיתגורס" data-en="Pythagoras">פיתגורס</span><small data-he="מתמטיקה" data-en="Mathematics">מתמטיקה</small></a>
         <a href="#" class="name-tile"><span data-he="הרקליטוס" data-en="Heraclitus">הרקליטוס</span><small data-he="פילוסופיה" data-en="Philosophy">פילוסופיה</small></a>
         <a href="#" class="name-tile"><span data-he="דמוקריטוס" data-en="Democritus">דמוקריטוס</span><small data-he="אטומיזם" data-en="Atomism">אטומיזם</small></a>
@@ -131,6 +131,7 @@
     function updatePlace(placeKey) { const data = places[placeKey][currentLanguage]; placeName.textContent = data.name; placeDescription.textContent = data.description; placeFiguresLabel.textContent = currentLanguage === 'he' ? 'דמויות קשורות:' : 'Connected figures:'; placeFigures.textContent = data.figures; document.querySelectorAll('.map-point').forEach((point) => point.classList.toggle('active', point.dataset.place === placeKey)); }
     function setLanguage(language) { currentLanguage = language; document.documentElement.lang = language; document.documentElement.dir = language === 'he' ? 'rtl' : 'ltr'; document.body.classList.toggle('english-mode', language === 'en'); document.querySelectorAll('[data-he][data-en]').forEach((element) => { element.textContent = element.dataset[language]; }); toggle.textContent = language === 'he' ? 'English' : 'עברית'; localStorage.setItem('siteLanguage', language); updatePlace(document.querySelector('.map-point.active')?.dataset.place || 'athens'); }
     document.querySelectorAll('.map-point').forEach((point) => point.addEventListener('click', () => updatePlace(point.dataset.place)));
+    document.getElementById('homerCard')?.addEventListener('click', (event) => { event.preventDefault(); window.location.href = 'https://rexram987-create.github.io/ancient-greek-thinkers/people/homer.html'; });
     toggle.addEventListener('click', () => setLanguage(currentLanguage === 'he' ? 'en' : 'he'));
     setLanguage(currentLanguage);
   </script>
