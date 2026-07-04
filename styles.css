@@ -7,7 +7,7 @@
   --accent: #d4a15f;
   --line: rgba(244, 234, 219, 0.16);
   --shadow: 0 18px 46px rgba(0, 0, 0, 0.35);
-  --athens-image: url("https://upload.wikimedia.org/wikipedia/commons/5/5c/Acropolis_of_Athens_01361.JPG");
+  --athens-image: url("assets/athens-acropolis.svg");
 }
 
 * {
@@ -165,9 +165,7 @@ p {
   width: 100%;
   height: 100%;
   min-height: 210px;
-  background-image:
-    linear-gradient(rgba(18, 16, 13, 0.12), rgba(18, 16, 13, 0.26)),
-    var(--athens-image);
+  background-image: var(--athens-image);
   background-size: cover;
   background-position: center;
 }
