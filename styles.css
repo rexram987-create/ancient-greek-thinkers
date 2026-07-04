@@ -1,12 +1,13 @@
 :root {
-  --bg: #f6efe4;
-  --paper: #fffaf0;
-  --ink: #2b2118;
-  --muted: #6d5a46;
-  --accent: #9f6b2f;
-  --accent-dark: #6f461f;
-  --line: rgba(43, 33, 24, 0.14);
-  --shadow: 0 20px 50px rgba(43, 33, 24, 0.12);
+  --bg: #12100d;
+  --panel: #1d1813;
+  --panel-soft: #261f18;
+  --ink: #f4eadb;
+  --muted: #c8b79e;
+  --accent: #d4a15f;
+  --accent-soft: #7d5730;
+  --line: rgba(244, 234, 219, 0.16);
+  --shadow: 0 22px 60px rgba(0, 0, 0, 0.35);
 }
 
 * {
@@ -21,10 +22,10 @@ body {
   margin: 0;
   font-family: Georgia, "Times New Roman", serif;
   background:
-    radial-gradient(circle at top left, rgba(159, 107, 47, 0.18), transparent 35%),
-    linear-gradient(180deg, #f8f0e3, var(--bg));
+    radial-gradient(circle at top left, rgba(212, 161, 95, 0.18), transparent 32%),
+    linear-gradient(180deg, #18130f, var(--bg));
   color: var(--ink);
-  line-height: 1.7;
+  line-height: 1.65;
 }
 
 .top-nav {
@@ -34,15 +35,16 @@ body {
   display: flex;
   justify-content: space-between;
   gap: 1rem;
-  padding: 1rem clamp(1rem, 4vw, 4rem);
-  background: rgba(255, 250, 240, 0.86);
+  padding: 0.9rem clamp(1rem, 4vw, 4rem);
+  background: rgba(18, 16, 13, 0.88);
   border-bottom: 1px solid var(--line);
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(14px);
 }
 
 .brand {
   font-weight: 700;
   letter-spacing: 0.03em;
+  color: var(--accent);
 }
 
 .nav-links {
@@ -58,120 +60,153 @@ body {
 }
 
 .nav-links a:hover {
-  color: var(--accent-dark);
+  color: var(--accent);
 }
 
 .hero {
-  min-height: 88vh;
+  min-height: 72vh;
   background:
-    linear-gradient(rgba(43, 33, 24, 0.28), rgba(43, 33, 24, 0.58)),
+    linear-gradient(rgba(18, 16, 13, 0.48), rgba(18, 16, 13, 0.86)),
     url("https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Acropolis_of_Athens_01361.JPG/1280px-Acropolis_of_Athens_01361.JPG");
   background-size: cover;
   background-position: center;
-  color: #fffaf0;
+  color: var(--ink);
 }
 
 .hero-content {
-  max-width: 950px;
-  padding: clamp(4rem, 12vw, 10rem) clamp(1.2rem, 6vw, 6rem);
+  max-width: 860px;
+  padding: clamp(3.5rem, 10vw, 8rem) clamp(1.2rem, 6vw, 6rem);
 }
 
 .eyebrow {
   text-transform: uppercase;
-  letter-spacing: 0.16em;
-  font-size: 0.85rem;
-  opacity: 0.9;
+  letter-spacing: 0.14em;
+  font-size: 0.82rem;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.eyebrow.dark {
+  color: var(--accent);
 }
 
 h1 {
-  font-size: clamp(3rem, 8vw, 6.8rem);
-  line-height: 0.95;
-  margin: 0.25rem 0 1.25rem;
+  font-size: clamp(2.8rem, 7vw, 6rem);
+  line-height: 0.96;
+  margin: 0.25rem 0 1rem;
 }
 
 h2 {
-  font-size: clamp(2rem, 4vw, 3.1rem);
+  font-size: clamp(1.9rem, 4vw, 3rem);
   line-height: 1.1;
-  margin: 0 0 1rem;
+  margin: 0 0 0.9rem;
 }
 
 h3 {
-  margin-top: 0;
+  margin: 0 0 0.35rem;
+}
+
+p {
+  color: var(--muted);
 }
 
 .button {
   display: inline-block;
-  margin-top: 1.4rem;
-  padding: 0.85rem 1.2rem;
-  border: 1px solid rgba(255, 250, 240, 0.7);
+  margin-top: 1.2rem;
+  padding: 0.85rem 1.25rem;
+  border: 1px solid rgba(212, 161, 95, 0.58);
   border-radius: 999px;
-  color: #fffaf0;
+  color: #17120e;
   text-decoration: none;
-  background: rgba(255, 250, 240, 0.14);
+  background: var(--accent);
+  font-weight: 700;
 }
 
 .section {
-  width: min(1180px, calc(100% - 2rem));
+  width: min(1120px, calc(100% - 2rem));
   margin: 0 auto;
-  padding: clamp(3rem, 7vw, 6rem) 0;
+  padding: clamp(2rem, 5vw, 4rem) 0;
 }
 
-.section > p {
-  max-width: 860px;
-  font-size: 1.1rem;
+.compact-section {
+  padding-bottom: 2rem;
 }
 
-.grid {
+.section-heading {
+  max-width: 760px;
+  margin-bottom: 1.4rem;
+}
+
+.compact-grid {
   display: grid;
-  grid-template-columns: repeat( auto-fit, minmax(230px, 1fr) );
-  gap: 1rem;
-  margin-top: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 0.85rem;
 }
 
-.card {
-  background: rgba(255, 250, 240, 0.76);
+.mini-card {
+  background: linear-gradient(180deg, var(--panel-soft), var(--panel));
   border: 1px solid var(--line);
-  border-radius: 22px;
-  padding: 1.35rem;
+  border-radius: 18px;
+  padding: 1rem;
   box-shadow: var(--shadow);
+  min-height: 118px;
 }
 
-.card h3 {
-  color: var(--accent-dark);
-  font-size: 1.45rem;
+.mini-card h3 {
+  color: var(--ink);
+  font-size: 1.32rem;
 }
 
-.meta {
+.mini-card p {
+  margin: 0;
   color: var(--muted);
-  font-size: 0.94rem;
-  margin-top: -0.45rem;
+  font-size: 0.96rem;
 }
 
-.split {
-  display: grid;
-  grid-template-columns: minmax(0, 2fr) minmax(260px, 1fr);
-  gap: 2rem;
-  align-items: start;
+.fields-panel {
+  background: rgba(38, 31, 24, 0.72);
+  border: 1px solid var(--line);
+  border-radius: 26px;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
 }
 
-.note {
-  background: var(--ink);
-  color: var(--paper);
-  border-radius: 24px;
-  padding: 1.5rem;
+.field-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 1rem;
+}
+
+.field-list span {
+  border: 1px solid rgba(212, 161, 95, 0.42);
+  color: var(--ink);
+  border-radius: 999px;
+  padding: 0.55rem 0.85rem;
+  background: rgba(212, 161, 95, 0.1);
 }
 
 .rtl {
-  background: rgba(255, 250, 240, 0.68);
+  background: linear-gradient(180deg, #261f18, #1d1813);
   border: 1px solid var(--line);
   border-radius: 28px;
-  padding: clamp(2rem, 5vw, 4rem);
-  margin-bottom: 4rem;
+  padding: clamp(1.5rem, 4vw, 3rem);
+  margin-bottom: 3rem;
+}
+
+.rtl p,
+.rtl li {
+  color: var(--muted);
+}
+
+.hebrew-list {
+  columns: 2;
+  column-gap: 2.5rem;
+  padding-right: 1.4rem;
 }
 
 .footer {
   text-align: center;
-  padding: 2rem 1rem;
+  padding: 1.5rem 1rem;
   border-top: 1px solid var(--line);
   color: var(--muted);
 }
@@ -182,11 +217,11 @@ h3 {
     flex-direction: column;
   }
 
-  .split {
-    grid-template-columns: 1fr;
+  .hero {
+    min-height: 64vh;
   }
 
-  .hero {
-    min-height: 76vh;
+  .hebrew-list {
+    columns: 1;
   }
 }
