@@ -7,37 +7,37 @@
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
   <title>אנשי הרוח הגדולים של יוון העתיקה</title>
-  <link rel="stylesheet" href="styles.css?v=6" />
+  <link rel="stylesheet" href="styles.css?v=7" />
 </head>
 <body>
   <nav class="site-nav" aria-label="ניווט ראשי">
-    <a class="nav-brand" href="#top">אנשי הרוח של יוון העתיקה</a>
+    <a class="nav-brand" href="#top" data-he="אנשי הרוח של יוון העתיקה" data-en="Ancient Greek Thinkers">אנשי הרוח של יוון העתיקה</a>
     <div class="nav-links">
-      <a href="#intro">יוון העתיקה</a>
-      <a href="#figures">הדמויות</a>
-      <a href="#english" lang="en" dir="ltr">English</a>
+      <a href="#intro" data-he="יוון העתיקה" data-en="Ancient Greece">יוון העתיקה</a>
+      <a href="#figures" data-he="הדמויות" data-en="Figures">הדמויות</a>
+      <button class="language-toggle" type="button" id="languageToggle">English</button>
     </div>
   </nav>
 
   <main id="top" class="home-shell">
     <section class="hero-grid">
       <div class="intro-card">
-        <p class="eyebrow">יוון העתיקה</p>
-        <h1>אנשי הרוח הגדולים</h1>
-        <p class="intro-text">
+        <p class="eyebrow" data-he="יוון העתיקה" data-en="Ancient Greece">יוון העתיקה</p>
+        <h1 data-he="אנשי הרוח הגדולים" data-en="Great Thinkers">אנשי הרוח הגדולים</h1>
+        <p class="intro-text" data-he="אינדקס קצר של הדמויות המפורסמות ביותר בעולם הרוח של יוון העתיקה." data-en="A compact index of the most famous intellectual figures of ancient Greece.">
           אינדקס קצר של הדמויות המפורסמות ביותר בעולם הרוח של יוון העתיקה.
         </p>
       </div>
 
       <figure class="athens-card" role="img" aria-label="האקרופוליס של אתונה">
         <div class="athens-image"></div>
-        <figcaption>אתונה והאקרופוליס</figcaption>
+        <figcaption data-he="אתונה והאקרופוליס" data-en="Athens and the Acropolis">אתונה והאקרופוליס</figcaption>
       </figure>
     </section>
 
     <section id="intro" class="overview-card">
-      <h2>מבוא קצר על יוון העתיקה</h2>
-      <p>
+      <h2 data-he="מבוא קצר על יוון העתיקה" data-en="A Short Introduction to Ancient Greece">מבוא קצר על יוון העתיקה</h2>
+      <p data-he="יוון העתיקה הייתה אחד המרכזים התרבותיים החשובים ביותר בעולם הקדום. עריה, ובעיקר אתונה, נודעו בפילוסופיה, היסטוריה, דרמה, מתמטיקה, רפואה, אמנות ומחשבה מדינית." data-en="Ancient Greece was one of the most influential cultural centers of the ancient world. Its cities, especially Athens, became famous for philosophy, history, drama, mathematics, medicine, art and political thought.">
         יוון העתיקה הייתה אחד המרכזים התרבותיים החשובים ביותר בעולם הקדום.
         עריה, ובעיקר אתונה, נודעו בפילוסופיה, היסטוריה, דרמה, מתמטיקה,
         רפואה, אמנות ומחשבה מדינית.
@@ -45,25 +45,45 @@
     </section>
 
     <section id="figures" class="names-panel" aria-label="הדמויות המרכזיות">
-      <a href="#" class="name-tile">הומרוס<span lang="en" dir="ltr">Homer · Epic poetry</span></a>
-      <a href="#" class="name-tile">פיתגורס<span lang="en" dir="ltr">Pythagoras · Mathematics</span></a>
-      <a href="#" class="name-tile">הרקליטוס<span lang="en" dir="ltr">Heraclitus · Philosophy</span></a>
-      <a href="#" class="name-tile">דמוקריטוס<span lang="en" dir="ltr">Democritus · Atomism</span></a>
-      <a href="#" class="name-tile">היפוקרטס<span lang="en" dir="ltr">Hippocrates · Medicine</span></a>
-      <a href="#" class="name-tile">הרודוטוס<span lang="en" dir="ltr">Herodotus · History</span></a>
-      <a href="#" class="name-tile">תוקידידס<span lang="en" dir="ltr">Thucydides · History</span></a>
-      <a href="#" class="name-tile">סוקרטס<span lang="en" dir="ltr">Socrates · Ethics</span></a>
-      <a href="#" class="name-tile">אפלטון<span lang="en" dir="ltr">Plato · Philosophy</span></a>
-      <a href="#" class="name-tile">אריסטו<span lang="en" dir="ltr">Aristotle · Logic</span></a>
-      <a href="#" class="name-tile">אוקלידס<span lang="en" dir="ltr">Euclid · Geometry</span></a>
-      <a href="#" class="name-tile">ארכימדס<span lang="en" dir="ltr">Archimedes · Science</span></a>
-      <a href="#" class="name-tile">סופוקלס<span lang="en" dir="ltr">Sophocles · Drama</span></a>
-    </section>
-
-    <section id="english" class="english-strip" lang="en" dir="ltr">
-      <strong>Great Thinkers of Ancient Greece</strong>
-      <span>A compact Hebrew-first homepage. Individual biography pages can be added later.</span>
+      <a href="#" class="name-tile"><span data-he="הומרוס" data-en="Homer">הומרוס</span><small data-he="שירה אפית" data-en="Epic poetry">שירה אפית</small></a>
+      <a href="#" class="name-tile"><span data-he="פיתגורס" data-en="Pythagoras">פיתגורס</span><small data-he="מתמטיקה" data-en="Mathematics">מתמטיקה</small></a>
+      <a href="#" class="name-tile"><span data-he="הרקליטוס" data-en="Heraclitus">הרקליטוס</span><small data-he="פילוסופיה" data-en="Philosophy">פילוסופיה</small></a>
+      <a href="#" class="name-tile"><span data-he="דמוקריטוס" data-en="Democritus">דמוקריטוס</span><small data-he="אטומיזם" data-en="Atomism">אטומיזם</small></a>
+      <a href="#" class="name-tile"><span data-he="היפוקרטס" data-en="Hippocrates">היפוקרטס</span><small data-he="רפואה" data-en="Medicine">רפואה</small></a>
+      <a href="#" class="name-tile"><span data-he="הרודוטוס" data-en="Herodotus">הרודוטוס</span><small data-he="היסטוריה" data-en="History">היסטוריה</small></a>
+      <a href="#" class="name-tile"><span data-he="תוקידידס" data-en="Thucydides">תוקידידס</span><small data-he="היסטוריה" data-en="History">היסטוריה</small></a>
+      <a href="#" class="name-tile"><span data-he="סוקרטס" data-en="Socrates">סוקרטס</span><small data-he="אתיקה ודיאלוג" data-en="Ethics and dialogue">אתיקה ודיאלוג</small></a>
+      <a href="#" class="name-tile"><span data-he="אפלטון" data-en="Plato">אפלטון</span><small data-he="פילוסופיה" data-en="Philosophy">פילוסופיה</small></a>
+      <a href="#" class="name-tile"><span data-he="אריסטו" data-en="Aristotle">אריסטו</span><small data-he="לוגיקה ומדע" data-en="Logic and science">לוגיקה ומדע</small></a>
+      <a href="#" class="name-tile"><span data-he="אוקלידס" data-en="Euclid">אוקלידס</span><small data-he="גאומטריה" data-en="Geometry">גאומטריה</small></a>
+      <a href="#" class="name-tile"><span data-he="ארכימדס" data-en="Archimedes">ארכימדס</span><small data-he="מדע והמצאות" data-en="Science and invention">מדע והמצאות</small></a>
+      <a href="#" class="name-tile"><span data-he="סופוקלס" data-en="Sophocles">סופוקלס</span><small data-he="דרמה" data-en="Drama">דרמה</small></a>
     </section>
   </main>
+
+  <script>
+    const toggle = document.getElementById('languageToggle');
+    let currentLanguage = localStorage.getItem('siteLanguage') || 'he';
+
+    function setLanguage(language) {
+      currentLanguage = language;
+      document.documentElement.lang = language;
+      document.documentElement.dir = language === 'he' ? 'rtl' : 'ltr';
+      document.body.classList.toggle('english-mode', language === 'en');
+
+      document.querySelectorAll('[data-he][data-en]').forEach((element) => {
+        element.textContent = element.dataset[language];
+      });
+
+      toggle.textContent = language === 'he' ? 'English' : 'עברית';
+      localStorage.setItem('siteLanguage', language);
+    }
+
+    toggle.addEventListener('click', () => {
+      setLanguage(currentLanguage === 'he' ? 'en' : 'he');
+    });
+
+    setLanguage(currentLanguage);
+  </script>
 </body>
 </html>
