@@ -210,6 +210,8 @@ p { color: var(--muted); }
 .name-tile { display: block; min-height: 72px; padding: 0.85rem; border-radius: 15px; border: 1px solid rgba(212, 161, 95, 0.22); background: rgba(38, 31, 24, 0.95); color: var(--ink); text-decoration: none; font-size: 1.08rem; font-weight: 700; }
 .name-tile small { display: block; margin-top: 0.18rem; color: var(--muted); font-size: 0.82rem; font-weight: 400; }
 .name-tile:hover { border-color: rgba(212, 161, 95, 0.75); transform: translateY(-1px); }
+.name-tile.is-disabled { opacity: 0.72; cursor: default; }
+.name-tile.is-disabled:hover { border-color: rgba(212, 161, 95, 0.22); transform: none; }
 
 @media (max-width: 720px) {
   .site-nav { align-items: flex-start; flex-direction: column; }
