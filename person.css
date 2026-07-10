@@ -1,0 +1,351 @@
+.person-hero,
+.person-section,
+.quick-nav,
+.person-footer {
+  background: rgba(29, 24, 19, 0.92);
+  border: 1px solid rgba(244, 234, 219, 0.16);
+  border-radius: 22px;
+  box-shadow: 0 18px 46px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(12px);
+  padding: clamp(1.1rem, 4vw, 2rem);
+}
+
+.person-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(230px, 0.55fr);
+  gap: 1.25rem;
+  align-items: center;
+}
+
+.person-title-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: flex-end;
+}
+
+.person-hero h1 {
+  margin: 0;
+  font-size: clamp(3rem, 8vw, 6rem);
+  line-height: 1.02;
+}
+
+.life-dates {
+  display: inline-block;
+  color: #d4a15f;
+  font-weight: 800;
+  border: 1px solid rgba(212, 161, 95, 0.32);
+  border-radius: 999px;
+  padding: 0.35rem 0.75rem;
+  background: rgba(212, 161, 95, 0.1);
+  margin-bottom: 0.25rem;
+}
+
+.person-lead {
+  max-width: 760px;
+  color: #c8b79e;
+  font-size: clamp(1.02rem, 2vw, 1.18rem);
+  line-height: 1.7;
+  margin: 0.8rem 0 0;
+}
+
+.hero-facts,
+.identity-grid,
+.card-grid,
+.works-grid,
+.facts-grid,
+.legacy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.hero-facts {
+  grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+  gap: 0.65rem;
+  margin-top: 1.1rem;
+}
+
+.hero-facts span,
+.info-card,
+.work-card,
+.timeline-item,
+.fact-card,
+.legacy-card {
+  border: 1px solid rgba(212, 161, 95, 0.22);
+  background: rgba(38, 31, 24, 0.92);
+  border-radius: 16px;
+  padding: 0.85rem;
+}
+
+.hero-facts strong,
+.info-card strong,
+.work-card strong,
+.fact-card strong,
+.legacy-card strong {
+  display: block;
+  color: #d4a15f;
+  margin-bottom: 0.25rem;
+}
+
+.card-icon {
+  font-size: 1.35rem;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.person-image-card {
+  margin: 0;
+  overflow: hidden;
+  border-radius: 18px;
+  border: 1px solid rgba(212, 161, 95, 0.24);
+  background: rgba(38, 31, 24, 0.92);
+}
+
+.person-image-card img {
+  display: block;
+  width: 100%;
+  min-height: 310px;
+  object-fit: cover;
+  background: #261f18;
+}
+
+.image-placeholder,
+.person-image-fallback {
+  display: none;
+  place-items: center;
+  min-height: 310px;
+  font-size: 4rem;
+  color: #d4a15f;
+  background: #261f18;
+}
+
+.person-image-card figcaption {
+  padding: 0.75rem 0.9rem;
+  color: #c8b79e;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  border-top: 1px solid rgba(244, 234, 219, 0.16);
+}
+
+.quick-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  align-items: center;
+}
+
+.quick-nav a,
+.person-footer a,
+.source-note a,
+.info-card a {
+  color: #d4a15f;
+}
+
+.quick-nav a {
+  text-decoration: none;
+  border: 1px solid rgba(212, 161, 95, 0.28);
+  border-radius: 999px;
+  padding: 0.4rem 0.7rem;
+  background: rgba(212, 161, 95, 0.1);
+  font-weight: 700;
+}
+
+.person-section h2 {
+  margin: 0 0 0.6rem;
+}
+
+.person-section p {
+  line-height: 1.7;
+}
+
+.work-card h3,
+.timeline-item h3 {
+  margin: 0 0 0.45rem;
+  color: #d4a15f;
+}
+
+.work-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 0.7rem;
+}
+
+.work-meta span {
+  border: 1px solid rgba(244, 234, 219, 0.16);
+  border-radius: 999px;
+  padding: 0.25rem 0.55rem;
+  color: #f4eadb;
+  font-size: 0.9rem;
+  background: rgba(18, 16, 13, 0.45);
+}
+
+.timeline-list {
+  display: grid;
+  gap: 0.8rem;
+  margin-top: 1rem;
+  border-inline-start: 3px solid rgba(212, 161, 95, 0.35);
+  padding-inline-start: 1rem;
+}
+
+.timeline-item {
+  position: relative;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  inset-inline-start: calc(-1rem - 8px);
+  top: 1rem;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #d4a15f;
+  border: 2px solid #f4eadb;
+}
+
+.gallery-preview img {
+  display: block;
+  width: 100%;
+  border-radius: 14px;
+  margin-bottom: 0.7rem;
+}
+
+.source-list {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.person-footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-button {
+  margin-top: 1rem;
+  border: 1px solid rgba(212, 161, 95, 0.45);
+  background: rgba(212, 161, 95, 0.16);
+  color: #f4eadb;
+  border-radius: 999px;
+  padding: 0.7rem 1rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.modal-button:hover {
+  background: rgba(212, 161, 95, 0.26);
+}
+
+.source-modal,
+.oath-modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  place-items: center;
+  background: rgba(0, 0, 0, 0.72);
+  z-index: 999;
+  padding: 1rem;
+}
+
+.source-modal.is-open,
+.oath-modal.is-open {
+  display: grid;
+}
+
+.modal-panel {
+  width: min(760px, 100%);
+  max-height: 86vh;
+  overflow: auto;
+  background: #1d1813;
+  border: 1px solid rgba(212, 161, 95, 0.35);
+  border-radius: 18px;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.55);
+  padding: 1rem;
+}
+
+.modal-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+  border-bottom: 1px solid rgba(244, 234, 219, 0.16);
+  padding-bottom: 0.7rem;
+  margin-bottom: 0.85rem;
+}
+
+.modal-head h2 {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+.modal-close {
+  border: 1px solid rgba(212, 161, 95, 0.45);
+  background: rgba(212, 161, 95, 0.12);
+  color: #f4eadb;
+  border-radius: 999px;
+  padding: 0.45rem 0.7rem;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.tab-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-bottom: 0.85rem;
+}
+
+.tab-button {
+  border: 1px solid rgba(212, 161, 95, 0.3);
+  background: rgba(38, 31, 24, 0.92);
+  color: #f4eadb;
+  border-radius: 999px;
+  padding: 0.45rem 0.7rem;
+  cursor: pointer;
+}
+
+.tab-button.is-active {
+  background: #d4a15f;
+  color: #17120e;
+  font-weight: 800;
+}
+
+.tab-panel {
+  display: none;
+  line-height: 1.75;
+  color: #c8b79e;
+}
+
+.tab-panel.is-active {
+  display: block;
+}
+
+@media (max-width: 760px) {
+  .person-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .person-image-card img,
+  .image-placeholder,
+  .person-image-fallback {
+    min-height: 250px;
+  }
+
+  .quick-nav a {
+    font-size: 0.92rem;
+  }
+
+  .modal-head {
+    align-items: flex-start;
+  }
+
+  .modal-panel {
+    max-height: 88vh;
+  }
+}
